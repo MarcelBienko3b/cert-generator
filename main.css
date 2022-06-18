@@ -2,13 +2,34 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    font-family: 'Comfortaa', cursive;
 }
 
 .table-container {
-    flex-basis: 50%;
+    flex-basis: 48%;
+    margin: auto;
+}
+
+.table-container table tr td {
+    padding: 0 0.5em;
+}
+
+.user-container {
+    flex-basis: 48%;
+    margin: auto;
+}
+
+.image-container {
+    flex-basis: 48%;
+    margin: auto;
+}
+
+.generator-container {
+    flex-basis: 48%;
+    margin: auto;
 }
 
 .image-container img {
-    width: 400px;
+    width: 600px;
     height: auto;
 }
