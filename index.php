@@ -25,16 +25,25 @@
 
             if ($result->num_rows > 0) {
                 echo '<form action="./scripts/set-flag.php" method="post">
-                        <table>';
+                        <table>
+                            <tr>
+                                <td>Data</td>
+                                <td>To generate</td>
+                                <td>Remove from database</td>
+                            </tr>';
                 while ($rows = $result->fetch_all()) {
                     foreach ($rows as $row) {
                         $_SESSION['users_count']=$row[0];
                         echo '<tr>
                                 <td>'.$row[3]." ".$row[1]." ".$row[2].'</td>
-                                <td><input type="hidden" name="flag'.$row[0].'" value="0_'.$row[0].'">
-                                <input type="checkbox" name="flag'.$row[0].'" value="1_'.$row[0].'"';
+                                <td>
+                                    <input type="hidden" name="flag'.$row[0].'" value="0_'.$row[0].'">
+                                    <input type="checkbox" name="flag'.$row[0].'" value="1_'.$row[0].'"';
                             if ($row[4]) echo 'checked';
-                            echo '></td>';
+                            echo '></td>
+                                <td>
+                                    <input type="checkbox" name="remove'.$row[0].'" value="1_'.$row[0].'">
+                                </td>';
                         echo '</tr>';
                     }
                 }
