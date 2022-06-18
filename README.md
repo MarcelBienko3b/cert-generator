@@ -2,7 +2,7 @@
 
 ## Screenshot
 
-![Screenshot from website](https://iili.io/hUOhYJ.png)
+![Screenshot from website](https://iili.io/hUOPp4.png)
 
 ## HOW TO
 
