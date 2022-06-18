@@ -10,7 +10,7 @@
 
             if ($row['flag'] == '1') {
 
-                $font = "Cookie-Regular.ttf";
+                $font = "font.ttf";
                 $image = imagecreatefromjpeg("cert-background.jpg");
                 $color = imagecolorallocate($image, 25, 25, 25);
                 $name = $row['fname']." ".$row['lname']." [".$row['sign']."]";
