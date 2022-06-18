@@ -44,29 +44,6 @@ C:
 > Upload here any background image for you certificate, but rename it to cert-background.jpg. Remember, it must be .jpg format. If you upload image in other resolution, you must change X and Y coordinates of text placement in `cert-generate.php` file like shown in `[ annot. 3 ]` section.
 
 > `[ annot. 3 ]`\
-> To adjust the font size, go to line `17.` and change second parameter of function `imagettftext` like shown:
-> > Change font size `18` 🠆 `24`:
-> > ```
-> > imagettftext($image, 18, 0, 220, 280, $color, $font, $name);
-> > ```
-> > ```
-> > imagettftext($image, 24, 0, 220, 280, $color, $font, $name);
-> > ```
-> To adjust the text placement, go to line `17.` and change third and fourth parameter of function `imagettftext` like shown:
-> > Change font size `220` 🠆 `200` to change X coordinates:
-> > ```
-> > imagettftext($image, 18, 0, 220, 280, $color, $font, $name);
-> > ```
-> > ```
-> > imagettftext($image, 24, 0, 200, 280, $color, $font, $name);
-> > ```
-> > Change font size `280` 🠆 `140` to change Y coordinates:
-> > ```
-> > imagettftext($image, 18, 0, 220, 280, $color, $font, $name);
-> > ```
-> > ```
-> > imagettftext($image, 24, 0, 200, 140, $color, $font, $name);
-> > ```
 > To adjust the font color, go to line `15.` and change rgb values like shown:
 > > Change `($image, 25, 25, 25)` 🠆 `($image, 80, 80, 80)`
 > > ```
