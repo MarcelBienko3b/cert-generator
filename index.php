@@ -10,13 +10,13 @@
 <body>
 
     <div class="table-container">
-        <h2>Zmien flage</h2>
+        <h2>Change flag</h2>
 
         <?php
 
             session_start();
         
-            require('conn.php');
+            require('./scripts/conn.php');
 
             $query = 'select * from users';
             $result = $conn->query($query);
@@ -24,7 +24,7 @@
             $_SESSION['users_count'] = 0;
 
             if ($result->num_rows > 0) {
-                echo '<form action="set-flag.php" method="post">
+                echo '<form action="./scripts/set-flag.php" method="post">
                         <table>';
                 while ($rows = $result->fetch_all()) {
                     foreach ($rows as $row) {
@@ -48,9 +48,9 @@
     </div>
 
     <div class="table-container">
-        <h2>Dodaj uzytkownika</h2>
+        <h2>Add user</h2>
 
-            <form action="send-user.php" method="post">
+            <form action="./scripts/send-user.php" method="post">
 
                 <label for="fname">Imie</label><br>
                 <input type="text" name="fname"><br>
@@ -68,7 +68,7 @@
     </div>
 
     <div class="generator-container">
-        <form action="cert-generate.php" method="post">
+        <form action="./scripts/cert-generate.php" method="post">
             <input type="submit" value="Generuj certyfikaty">
         </form>
     </div>
