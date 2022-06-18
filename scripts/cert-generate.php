@@ -1,9 +1,12 @@
 <?php
 
-    $font_size = $_POST['font-size'];
-    $font_angle = $_POST['font-angle'];
-    $text_x_offset = $_POST['text-x'];
-    $text_y_offset = $_POST['text-y'];
+    $font_size = intval($_POST['font-size']);
+    $font_angle = intval($_POST['font-angle']);
+    $text_x_offset = intval($_POST['text-x']);
+    $text_y_offset = intval($_POST['text-y']);
+    $text_color = $_POST['color'];
+
+    list($r, $g, $b) = sscanf($text_color, "#%02x%02x%02x");
 
     require('conn.php');
 
@@ -19,9 +22,9 @@
                 $image = imagecreatefromjpeg("../cert-background.jpg");
                 
                 $color = imagecolorallocate($image,
-                                            25,
-                                            25,
-                                            25);
+                                            $r,
+                                            $g,
+                                            $b);
 
                 $name = $row['fname']." ".$row['lname']." [".$row['sign']."]";
 

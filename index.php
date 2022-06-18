@@ -85,15 +85,18 @@
             </div>
 
             <label for="font-size">Font size</label>
-            <input type="number" name="font-size" default="18"><br>
+            <input type="number" name="font-size" require><br>
 
             <label for="font-angle">Font angle</label>
-            <input type="number" name="font-angle" default="0"><br>
+            <input type="number" name="font-angle" required><br>
 
             <label for="text-x">X coordinate</label>
-            <input type="number" name="text-x" default="0" required><br>
+            <input type="number" name="text-x" required><br>
             <label for="text-y">Y coordinate</label>
-            <input type="number" name="text-y" default="0" required><br>
+            <input type="number" name="text-y" required><br>
+
+            <label for="color">Text color</label>
+            <input type="color" name="color" default="#000000"><br>
 
             <input type="submit" value="Generate">
         </form>
