@@ -10,6 +10,7 @@
 <body>
 
     <div class="table-container">
+        <h2>Zmien flage</h2>
 
         <?php
 
@@ -37,7 +38,7 @@
                         echo '</tr>';
                     }
                 }
-                echo    '</table>
+                echo    '</table><br>
                         <input type="submit" value="Zatwierdź" class="btn-send">
                     </form>';
             }
@@ -47,17 +48,29 @@
     </div>
 
     <div class="table-container">
+        <h2>Dodaj uzytkownika</h2>
 
             <form action="send-user.php" method="post">
 
-                <label for="fname">Imie</label>
-                <input type="text" name="fname">
+                <label for="fname">Imie</label><br>
+                <input type="text" name="fname"><br>
 
-                <label for="lname">Nazwisko</label>
-                <input type="text" name="lname">
+                <label for="lname">Nazwisko</label><br>
+                <input type="text" name="lname"><br>
+
+                <label for="sign">Znak</label><br>
+                <input type="text" name="sign"><br><br>
+
+                <input type="submit" value="Zatwierdź">
 
             </form>
 
+    </div>
+
+    <div class="generator-container">
+        <form action="cert-generate.php" method="post">
+            <input type="submit" value="Generuj certyfikaty">
+        </form>
     </div>
 
 </body>

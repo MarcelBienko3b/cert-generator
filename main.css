@@ -1,0 +1,9 @@
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.table-container {
+    flex-basis: 50%;
+}
