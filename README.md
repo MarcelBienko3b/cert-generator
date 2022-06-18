@@ -1,5 +1,9 @@
 # cert-generator
 
+## Screenshot
+
+![Screenshot from website](https://ibb.co/9Yf5S6n)
+
 ## HOW TO
 
 - Download .zip of this repository
