@@ -13,7 +13,7 @@
 <body>
 
     <div class="table-container">
-        <h2>Change flag</h2>
+        <h2>[ Change flag ]</h2>
 
         <?php
 
@@ -60,7 +60,7 @@
     </div>
 
     <div class="user-container">
-        <h2>Add user</h2>
+        <h2>[ Add user ]</h2>
 
             <form action="./scripts/send-user.php" method="post">
 
@@ -79,13 +79,13 @@
     </div>
 
     <div class="image-container">
-        <h2>Your certificate background:</h2>
+        <h2>[ Your certificate background ]</h2>
         <img src="cert-background.jpg" alt="Certificate background image">
     </div>
 
 
     <div class="generator-container">
-        <h2>Generator</h2>
+        <h2>[ Generator ]</h2>
         <form action="./scripts/cert-generate.php" method="post">
     
             <label for="font-size">Font size</label><br>

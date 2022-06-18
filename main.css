@@ -3,6 +3,8 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     font-family: 'Comfortaa', cursive;
+    background-color: rgb(47, 47, 47);
+    color: rgb(240, 240, 240);
 }
 
 .table-container {
@@ -34,9 +36,19 @@ body {
     height: auto;
 }
 
+input {
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: rgb(95, 95, 95);
+    color: rgb(240, 240, 240);
+    height: 20px;
+}
+
 input[type=submit] {
     margin: auto;
     width: 20%;
     height: auto;
     padding: 5px 10px;
+    font-family: 'Comfortaa';
+    background-color: rgb(158, 58, 58);
 }
