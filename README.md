@@ -19,6 +19,10 @@ C:
           │ cert-background.jpg     [ annot. 2 ]
           │ README.md
           │
+          └─── Certificates         [ This folder is necessary for app to work properly ]
+          |    |
+          |    | README.md
+          |
           └─── scripts
                │
                │ cert-generate.php  [ annot. 3 ]
