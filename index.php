@@ -28,7 +28,7 @@
                         <table>';
                 while ($rows = $result->fetch_all()) {
                     foreach ($rows as $row) {
-                        $_SESSION['users_count']++;
+                        $_SESSION['users_count']=$row[0];
                         echo '<tr>
                                 <td>'.$row[3]." ".$row[1]." ".$row[2].'</td>
                                 <td><input type="hidden" name="flag'.$row[0].'" value="0_'.$row[0].'">
@@ -53,13 +53,13 @@
             <form action="./scripts/send-user.php" method="post">
 
                 <label for="fname">Imie</label><br>
-                <input type="text" name="fname"><br>
+                <input type="text" name="fname" required><br>
 
                 <label for="lname">Nazwisko</label><br>
-                <input type="text" name="lname"><br>
+                <input type="text" name="lname" required><br>
 
                 <label for="sign">Znak</label><br>
-                <input type="text" name="sign"><br><br>
+                <input type="text" name="sign" required><br><br>
 
                 <input type="submit" value="Zatwierdź">
 
