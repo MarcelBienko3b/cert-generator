@@ -39,7 +39,7 @@
                     }
                 }
                 echo    '</table><br>
-                        <input type="submit" value="Zatwierdź" class="btn-send">
+                        <input type="submit" value="Submit" class="btn-send">
                     </form>';
             }
 
@@ -52,16 +52,16 @@
 
             <form action="./scripts/send-user.php" method="post">
 
-                <label for="fname">Imie</label><br>
-                <input type="text" name="fname" required><br>
+                <label for="fname">First name</label><br>
+                <input type="text" name="fname" default=""><br>
 
-                <label for="lname">Nazwisko</label><br>
-                <input type="text" name="lname" required><br>
+                <label for="lname">Last name</label><br>
+                <input type="text" name="lname" default=""><br>
 
-                <label for="sign">Znak</label><br>
+                <label for="sign">Sign</label><br>
                 <input type="text" name="sign" required><br><br>
 
-                <input type="submit" value="Zatwierdź">
+                <input type="submit" value="Submit">
 
             </form>
 
@@ -69,7 +69,24 @@
 
     <div class="generator-container">
         <form action="./scripts/cert-generate.php" method="post">
-            <input type="submit" value="Generuj certyfikaty">
+
+            <div class="image-container">
+                <p>Your certificate background:</p>
+                <img src="cert-background.jpg" alt="Certificate background image">
+            </div>
+
+            <label for="font-size">Font size</label>
+            <input type="number" name="font-size" default="18"><br>
+
+            <label for="font-angle">Font angle</label>
+            <input type="number" name="font-angle" default="0"><br>
+
+            <label for="text-x">X coordinate</label>
+            <input type="number" name="text-x" default="0" required><br>
+            <label for="text-y">Y coordinate</label>
+            <input type="number" name="text-y" default="0" required><br>
+
+            <input type="submit" value="Generate">
         </form>
     </div>
 

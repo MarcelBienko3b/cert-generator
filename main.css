@@ -7,3 +7,8 @@ body {
 .table-container {
     flex-basis: 50%;
 }
+
+.image-container img {
+    width: 400px;
+    height: auto;
+}
