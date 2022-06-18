@@ -20,13 +20,11 @@ C:
           │ README.md
           │
           └─── Certificates         [ This folder is necessary for app to work properly,
-          |    |                      it will contain generated certificates ]
-          |    |
-          |    | README.md
-          |
+          │    │                      it will contain generated certificates ]
+          │    │ README.md
+          │ 
           └─── scripts
                │
-               │ cert-generate.php  [ annot. 3 ]
                │ ...
 ```
 - Run xampp with Apache and MySQL modules started
