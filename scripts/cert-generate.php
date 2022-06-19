@@ -1,5 +1,7 @@
 <?php
 
+    require('fpdf.php');
+
     $font_size = intval($_POST['font-size']);
     $font_angle = intval($_POST['font-angle']);
     $text_x_offset = intval($_POST['text-x']);
@@ -37,7 +39,13 @@
                             $font,
                             $name);
 
-                imagejpeg($image, "../Certificates/".$row['lname'].$row['fname'].".jpg");
+                imagejpeg($image, "../Certificates/".$row['lname']."_".$row['fname'].".jpg");
+
+                $pdf = new FPDF('L', 'in', [11.7, 8.27]);
+                $pdf->AddPage();
+                $pdf->Image("../Certificates/".$row['lname']."_".$row['fname'].".jpg", 0, 0, 11.7, 8.27);
+                $pdf->Output("../Certificates/".$row['lname']."_".$row['fname'].".pdf", "F");
+
                 imagedestroy($image);
 
             } else echo "Not generated for ".$row['lname']." ".$row['fname']." ".$row['sign'].'<br>';
