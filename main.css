@@ -7,48 +7,71 @@ body {
     color: rgb(240, 240, 240);
 }
 
-.table-container {
-    flex-basis: 48%;
-    margin: auto;
+.nav-container {
+
+    flex-basis: 100%;
+
 }
 
-.table-container table tr td {
-    padding: 0 0.5em;
+.nav-list {
+
+    display: flex;
+    place-content: flex-end;
+    list-style-type: none;
+
 }
 
-.user-container {
-    flex-basis: 48%;
-    margin: auto;
+.nav-list-item {
+
+    flex-basis: 12%;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(240, 240, 240);
+
 }
 
-.image-container {
-    flex-basis: 48%;
-    margin: auto;
+.nav-list-item:hover {
+
+    background-color: black;
+
 }
 
 .generator-container {
-    flex-basis: 48%;
-    margin: auto;
+
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
 }
 
-.image-container img {
-    width: 600px;
-    height: auto;
+.generator-variables-container {
+
+    flex-basis: 50%;
+
 }
 
-input {
-    border: 2px solid black;
-    border-radius: 4px;
-    background-color: rgb(95, 95, 95);
-    color: rgb(240, 240, 240);
-    height: 20px;
+.generator-live-container {
+
+    flex-basis: 50%;
+
 }
 
-input[type=submit] {
-    margin: auto;
-    width: 20%;
-    height: auto;
-    padding: 5px 10px;
-    font-family: 'Comfortaa';
-    background-color: rgb(158, 58, 58);
+.database-container {
+
+    flex-basis: 50%;
+
+}
+
+.newuser-container {
+
+    flex-basis: 50%;
+
+}
+
+td {
+
+    text-align: center;
+    min-width: 120px;
+
 }

@@ -3,12 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <title>Management Panel</title>
+        <link rel="stylesheet" href="main.css">
     </head>
     <body>
     
         <nav class="nav-container">
             <?php
-            
+
                 session_start();
                 require_once('./scripts/nav.php');
 
