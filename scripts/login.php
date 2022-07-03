@@ -1,9 +1,5 @@
 <?php
 
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-
     $user = new stdClass;
     $user->email = $_POST['email'];
     $user->password = md5($_POST['password']);
