@@ -11,17 +11,27 @@
     require('./conn.php');
     require('./functions.php');
 
-    $query = 'select key, email, password 
-                    from users
-                    where email = '.$user->{'email'}.';';
+    $query = 'select 
+                users.key,
+                users.email,
+                users.password 
+                from users
+                where email = "'.$user->{'email'}.'";';
 
+    $checkEmail = checkIfEmailInDB($conn, $query);
+
+    if (!$checkEmail) {
+        header('Location: ../index.html');
+        exit();
+    }
+
+    if (!checkPass($checkEmail['password'], $user->{'password'})) {
+        header('Location: ../index.html');
+        exit();
+    }
     
-
-    if (checkIfEmailInDB($conn, $query)) echo 'jest';
-    echo 'nie ma';
-
-    //setcookie('user', json_encode($user), 0, '/');
-
-    //header('Location: ../logged.php');
+    setcookie('user', json_encode($checkEmail), 0, '/');
+    print_r($_COOKIE['user']);
+    header('Location: ../logged.php');
 
 ?>

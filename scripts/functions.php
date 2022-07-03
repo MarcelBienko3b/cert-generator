@@ -5,6 +5,13 @@
         $result = mysqli_fetch_array(mysqli_query($conn, $query), MYSQLI_ASSOC);
 
         if (!$result) return false;
+        return $result;
+
+    }
+
+    function checkPass($fromDB, $fromPOST) {
+
+        if ($fromDB != $fromPOST) { return false; }
         return true;
 
     }
