@@ -10,7 +10,7 @@
 
             <?php
             
-                $user = json_decode($_COOKIE['user']);
+                require_once('./scripts/nav.php');
 
                 require './auth/auth.php';
                 echo 'Jestes zalogowany jako: '.$user->{'key'};

@@ -14,7 +14,8 @@
     $query = 'select 
                 users.key,
                 users.email,
-                users.password 
+                users.password,
+                users.admin
                 from users
                 where email = "'.$user->{'email'}.'";';
 
@@ -31,7 +32,6 @@
     }
     
     setcookie('user', json_encode($checkEmail), 0, '/');
-    print_r($_COOKIE['user']);
     header('Location: ../logged.php');
 
 ?>
