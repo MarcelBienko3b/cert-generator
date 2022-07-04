@@ -69,6 +69,13 @@ body {
 
 }
 
+.cert-download-link {
+
+    color: red;
+    margin: 10px 20px;
+
+}
+
 td {
 
     text-align: center;

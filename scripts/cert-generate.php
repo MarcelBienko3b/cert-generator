@@ -8,6 +8,7 @@
     $text_x_offset = intval($_POST['text-x']);
     $text_y_offset = intval($_POST['text-y']);
     $text_color = $_POST['color'];
+    $cert_title = $_POST['title'];
 
     $_SESSION['font-size'] = $font_size;
     $_SESSION['font-angle'] = $font_angle;
@@ -21,7 +22,7 @@
     if ($_POST['action'] == 'Generate') {
         require('conn.php');
 
-        $query = "select users.id, users.fname, users.lname, users.sign, users.flag from users";
+        $query = "select users.id, users.fname, users.lname, users.key, users.flag from users";
         $result = $conn->query($query);
 
         if ($result->num_rows > 0) {
@@ -37,7 +38,7 @@
                                                 $g,
                                                 $b);
 
-                    $text = $row['fname']." ".$row['lname']." [".$row['sign']."]";
+                    $text = $row['fname']." ".$row['lname']." [".$row['key']."]";
 
                     imagettftext($image,
                                 $font_size,
@@ -48,12 +49,12 @@
                                 $font,
                                 $text);
 
-                    imagejpeg($image, "../Certificates/".$row['lname']."_".$row['fname'].".jpg");
+                    imagejpeg($image, "../Certificates/".$cert_title."_".$row['key'].".jpg");
 
                     $pdf = new FPDF('L', 'in', [11.7, 8.27]);
                     $pdf->AddPage();
-                    $pdf->Image("../Certificates/".$row['lname']."_".$row['fname'].".jpg", 0, 0, 11.7, 8.27);
-                    $pdf->Output("../Certificates/".$row['lname']."_".$row['fname'].".pdf", "F");
+                    $pdf->Image("../Certificates/".$cert_title."_".$row['key'].".jpg", 0, 0, 11.7, 8.27);
+                    $pdf->Output("../Certificates/".$cert_title."_".$row['key'].".pdf", "F");
 
                     imagedestroy($image);
 
