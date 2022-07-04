@@ -57,6 +57,7 @@
                     $pdf->Output("../Certificates/".$cert_title."_".$row['key'].".pdf", "F");
 
                     imagedestroy($image);
+                    unlink("../Certificates/".$cert_title."_".$row['key'].".jpg");
 
                 }
 

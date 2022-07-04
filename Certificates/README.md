@@ -1,1 +1,0 @@
-This file is for GitHub to create directory above, which is needed for app to function.

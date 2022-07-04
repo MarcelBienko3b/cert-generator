@@ -20,17 +20,23 @@
 
         <?php
         
-            require ('./scripts/conn.php');
             require ('./scripts/errors.php');
-            require ('./scripts/functions.php');
-            require ('./auth/auth.php');
+            require ('./auth.php');
 
             $user = AuthUser();
+
+            if (!$user) {
+    
+                echo '<h1>Authentication error!</h1>
+                        <a href="./index.html">Back to login</a>';
+                exit();
+        
+            }
 
             $files = glob('./Certificates/*_'.$user->{'key'}.'.pdf');
             foreach($files as $file) {
                 $cert_name = explode('_', explode('/', $file)[2])[0];
-                echo '<a class="cert-download-link" href=./scripts/download-pdf.php?name='.$cert_name.'&user='.$user->{'key'}.'>Download: '.$cert_name.'</a>';
+                echo '<a class="cert-download-link" href=./Certificates/download-pdf.php?name='.$cert_name.'&user='.$user->{'key'}.'&auth='.$user->{'password'}.'&email='.$user->{'email'}.'>Download: '.$cert_name.'</a>';
             }
 
         ?>

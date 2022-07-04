@@ -1,6 +1,6 @@
 <?php
 
-    require('./auth/auth.php');
+    require('./auth.php');
 
     $user = AuthUser();
 

@@ -10,7 +10,7 @@
         <?php
         
             require ('./scripts/errors.php');
-            require ('./auth/auth.php');
+            require ('./auth.php');
 
             $user = AuthUser();
 

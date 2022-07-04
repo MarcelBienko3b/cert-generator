@@ -10,13 +10,15 @@
         <nav class="nav-container">
             <?php
 
+                require('./scripts/errors.php');
+
                 session_start();
                 require_once('./scripts/nav.php');
 
             ?>
         </nav>
 
-        <?php 
+        <?php
         
             if (!$user->{'admin'}) {
             
