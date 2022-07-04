@@ -67,7 +67,7 @@
                                 <td>
                                     <input type="hidden" name="flag'.$row[0].'" value="0_'.$row[0].'">
                                     <input type="checkbox" name="flag'.$row[0].'" value="1_'.$row[0].'"';
-                            if ($row[4]) echo 'checked';
+                            if ($row[7]) echo 'checked';
                             echo '></td>
                                 <td>
                                     <input type="checkbox" name="remove'.$row[0].'" value="1_'.$row[0].'">
