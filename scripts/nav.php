@@ -21,6 +21,9 @@
                 <a href="./user-certificates.php" class="nav-list-item">
                     <li>Your certificates</li>
                 </a>
+                <a href="./scripts/logout.php" class="nav-list-item">
+                    <li>Log out</li>
+                </a>
             </ul>
         ';
 

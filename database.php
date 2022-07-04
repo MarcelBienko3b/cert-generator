@@ -7,6 +7,29 @@
     </head>
     <body>
 
+        <?php
+        
+            require ('./scripts/errors.php');
+            require ('./auth/auth.php');
+
+            $user = AuthUser();
+
+            if (!$user) {
+            
+                echo '<h1>Authentication error!</h1>
+                        <a href="./index.html">Back to login</a>';
+
+            }
+
+            if (!$user->{'admin'}) {
+
+                echo '<h1>Authentication error!</h1>
+                        <a href="./index.html">Back to login</a>';
+
+            }
+
+        ?>
+
         <nav class="nav-container">
             <?php
             

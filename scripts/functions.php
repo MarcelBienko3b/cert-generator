@@ -1,31 +1,37 @@
 <?php
 
-    function checkIfEmailInDB($conn, $query) {
+    if (!function_exists('checkIfEmailInDB')) {
+        function checkIfEmailInDB($conn, $query) {
 
-        $result = mysqli_fetch_array(mysqli_query($conn, $query), MYSQLI_ASSOC);
+            $result = mysqli_fetch_array(mysqli_query($conn, $query), MYSQLI_ASSOC);
 
-        if (!$result) return false;
-        return $result;
+            if (!$result) return false;
+            return $result;
 
+        }
     }
 
-    function checkPass($fromDB, $fromPOST) {
+    if (!function_exists('checkPass')) {
+        function checkPass($fromDB, $fromPOST) {
 
-        if ($fromDB != $fromPOST) { return false; }
-        return true;
+            if ($fromDB != $fromPOST) { return false; }
+            return true;
 
+        }
     }
 
-    function isAdmin($conn, $email) {
+    if (!function_exists('isAdmin')) {
+        function isAdmin($conn, $email) {
 
-        $query = 'select admin from users
-                    where email = '.$email.';';
+            $query = 'select admin from users
+                        where email = '.$email.';';
 
-        $result = mysqli_fetch_array(mysqli_query($conn, $query), MYSQLI_ASSOC);
+            $result = mysqli_fetch_array(mysqli_query($conn, $query), MYSQLI_ASSOC);
 
-        if (!$result['admin']) return false;
-        return true;
+            if (!$result['admin']) return false;
+            return true;
 
+        }
     }
 
 ?>
