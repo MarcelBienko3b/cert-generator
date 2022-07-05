@@ -1,3 +1,11 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
 body {
     display: flex;
     flex-direction: row;
@@ -10,6 +18,8 @@ body {
 .nav-container {
 
     flex-basis: 100%;
+
+    margin-bottom: 2em;
 
 }
 
@@ -28,6 +38,13 @@ body {
     text-decoration: none;
     color: rgb(240, 240, 240);
 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    padding: .5em 2em;
+
 }
 
 .nav-list-item:hover {
@@ -42,12 +59,28 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 0 2em;
 
 }
 
 .generator-variables-container {
 
     flex-basis: 50%;
+
+}
+
+.generator-variables-container label,
+.generator-variables-container input {
+
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+
+}
+
+.generator-variables-container input {
+
+    margin-bottom: .8em;
 
 }
 
@@ -63,15 +96,45 @@ body {
 
 }
 
+.main-container {
+
+    flex-basis: 100%;
+    display: flex;
+
+}
+
 .database-container {
 
     flex-basis: 50%;
 
 }
 
-.newuser-container {
+.database-container input[type='submit'] {
+
+    width: 20%;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.signup-container {
 
     flex-basis: 50%;
+
+}
+
+.signup-container label,
+.signup-container input {
+
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+
+}
+
+.signup-container input {
+
+    margin-bottom: .8em;
 
 }
 
@@ -82,9 +145,36 @@ body {
 
 }
 
+h1 {
+
+    display: block;
+    flex-basis: 100%;
+    text-align: center;
+
+}
+
+h2 {
+
+    text-align: center;
+    margin-bottom: 1em;
+
+}
+
 td {
 
     text-align: center;
     min-width: 120px;
+
+}
+
+td:first-of-type {
+
+    text-align: left;
+
+}
+
+tr:first-of-type td:first-of-type {
+
+    text-align: center;
 
 }

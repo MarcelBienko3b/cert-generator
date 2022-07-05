@@ -36,7 +36,8 @@
             $files = glob('./Certificates/*_'.$user->{'key'}.'.pdf');
             foreach($files as $file) {
                 $cert_name = explode('_', explode('/', $file)[2])[0];
-                echo '<a class="cert-download-link" href=./Certificates/download-pdf.php?name='.$cert_name.'&user='.$user->{'key'}.'&auth='.$user->{'password'}.'&email='.$user->{'email'}.'>Download: '.$cert_name.'</a>';
+                $cert_name_userfriendly = explode('/', $file)[2];
+                echo '<a class="cert-download-link" href=./Certificates/download-pdf.php?name='.$cert_name.'&user='.$user->{'key'}.'&auth='.$user->{'password'}.'&email='.$user->{'email'}.'>'.$cert_name_userfriendly.'</a>';
             }
 
         ?>

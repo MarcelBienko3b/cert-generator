@@ -38,67 +38,89 @@
             ?>
         </nav>
     
-        <div class="database-container">
+        <div class="main-container">
+            <div class="database-container">
+                <h2>Manage database</h2>
 
-        <?php
+            <?php
 
-            session_start();
+                session_start();
 
-            require('./scripts/conn.php');
+                require('./scripts/conn.php');
 
-            $query = 'select * from users';
-            $result = $conn->query($query);
+                $query = 'select * from users';
+                $result = $conn->query($query);
 
-            $_SESSION['users_count'] = 0;
+                $_SESSION['users_count'] = 0;
 
-            if ($result->num_rows > 0) {
-                echo '<form action="./scripts/set-flag.php" method="post">
-                        <table>
-                            <tr>
-                                <td style="font-weight: bold">User</td>
-                                <td style="font-weight: bold">Generate</td>
-                                <td style="font-weight: bold">Remove</td>
-                            </tr>';
-                while ($rows = $result->fetch_all()) {
-                    foreach ($rows as $row) {
-                        $_SESSION['users_count']=$row[0];
-                        echo '<tr>
-                                <td>[ '.$row[1].' ] '.$row[4].'</td>
-                                <td>
-                                    <input type="hidden" name="flag'.$row[0].'" value="0_'.$row[0].'">
-                                    <input type="checkbox" name="flag'.$row[0].'" value="1_'.$row[0].'"';
-                            if ($row[7]) echo 'checked';
-                            echo '></td>
-                                <td>
-                                    <input type="checkbox" name="remove'.$row[0].'" value="1_'.$row[0].'">
-                                </td>';
-                        echo '</tr>';
+                if ($result->num_rows > 0) {
+                    echo '<form action="./scripts/set-flag.php" method="post">
+                            <table>
+                                <tr>
+                                    <td style="font-weight: bold">User</td>
+                                    <td style="font-weight: bold">Generate</td>
+                                    <td style="font-weight: bold">Remove</td>
+                                </tr>';
+                    while ($rows = $result->fetch_all()) {
+                        foreach ($rows as $row) {
+                            $_SESSION['users_count']=$row[0];
+                            echo '<tr>
+                                    <td>[ '.$row[1].' ] '.$row[4].'</td>
+                                    <td>
+                                        <input type="hidden" name="flag'.$row[0].'" value="0_'.$row[0].'">
+                                        <input type="checkbox" name="flag'.$row[0].'" value="1_'.$row[0].'"';
+                                if ($row[7]) echo 'checked';
+                                echo '></td>
+                                    <td>
+                                        <input type="checkbox" name="remove'.$row[0].'" value="1_'.$row[0].'">
+                                    </td>';
+                            echo '</tr>';
+                        }
                     }
+                    echo    '</table><br>
+                            <input type="submit" value="Submit" class="btn-send">
+                        </form>';
                 }
-                echo    '</table><br>
-                        <input type="submit" value="Submit" class="btn-send">
-                    </form>';
-            }
 
-            ?>
+                ?>
 
-        </div>
+            </div>
 
-        <div class="newuser-container">
-            <form action="./scripts/send-user.php" method="post">
+            <div class="signup-container">
+                <h2>Add new user manualy</h2>
+                <form action="./scripts/sign-up.php" class="signup-form" method="POST">
 
-            <label for="fname">First name</label><br>
-            <input type="text" name="fname" default=""><br><br>
+                    <div class="signup-input--key">
+                        <label for="key">Login</label>
+                        <input type="text" name="key" id="key" placeholder="AB9-XYZ">
+                    </div>
 
-            <label for="lname">Last name</label><br>
-            <input type="text" name="lname" default=""><br><br>
+                    <div class="signup-input--fname">
+                        <label for="fname">First name</label>
+                        <input type="text" name="fname" id="fname">
+                    </div>
 
-            <label for="sign">Sign</label><br>
-            <input type="text" name="sign" required><br><br>
+                    <div class="signup-input--lname">
+                        <label for="lname">Last name</label>
+                        <input type="text" name="lname" id="lname">
+                    </div>
+                    
+                    <div class="signup-input--email">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email">
+                    </div>
 
-            <input type="submit" value="Submit">
+                    <div class="signup-input--password">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password">
+                    </div>
 
-            </form>
+                    <div class="signup-input--submit">
+                        <input type="submit" value="Sign up">
+                    </div>
+
+                </form>
+            </div>
         </div>
     
     </body>
