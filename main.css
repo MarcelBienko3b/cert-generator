@@ -145,6 +145,18 @@ body {
 
 }
 
+.notifications-container {
+
+    flex-basis: 50%;
+
+}
+
+.requests-container {
+
+    flex-basis: 50%;
+
+}
+
 h1 {
 
     display: block;

@@ -21,13 +21,17 @@
         <?php
         
             if (!$user->{'admin'}) {
-            
-                echo '<h3>Send request</h3>
-                    <h6>( Function under construction )</h6>';
-
-                echo '<h3>Your requests status and newsfeed</h3>
-                    <h6>( Function under construction )</h6>';
                 
+                echo '<div class="notifications-container">
+                        <h3>Notifications</h3>
+                        <h6>( Function under construction )</h6>
+                    </div>';
+            
+                echo '<div class="requests-container">
+                        <h3>Send request</h3>
+                        <h6>( Function under construction )</h6>
+                    </div>';
+
                 exit();
             
             } 
