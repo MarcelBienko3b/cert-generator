@@ -42,6 +42,22 @@
             <div class="database-container">
                 <h2>Manage database</h2>
 
+                <script language="JavaScript">
+
+                    function toggleAll(source, column) {
+
+                        checkboxes = document.getElementsByClassName(`checkbox-${column}`);
+
+                        for (var i = 0; i < checkboxes.length; i++) {
+
+                            checkboxes[i].checked = source.checked;
+
+                        }
+
+                    }
+
+                </script>
+
             <?php
 
                 session_start();
@@ -60,6 +76,11 @@
                                     <td style="font-weight: bold">User</td>
                                     <td style="font-weight: bold">Generate</td>
                                     <td style="font-weight: bold">Remove</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; text-align: center">Select all -></td>
+                                    <td><input type="checkbox" onClick="toggleAll(this, `generate`)" /></td>
+                                    <td><input type="checkbox" onClick="toggleAll(this, `remove`)" /></td>
                                 </tr>';
                     while ($rows = $result->fetch_all()) {
                         foreach ($rows as $row) {
@@ -68,11 +89,11 @@
                                     <td>[ '.$row[1].' ] '.$row[4].'</td>
                                     <td>
                                         <input type="hidden" name="flag'.$row[0].'" value="0_'.$row[0].'">
-                                        <input type="checkbox" name="flag'.$row[0].'" value="1_'.$row[0].'"';
+                                        <input class="checkbox-generate" type="checkbox" name="flag'.$row[0].'" value="1_'.$row[0].'"';
                                 if ($row[7]) echo 'checked';
                                 echo '></td>
                                     <td>
-                                        <input type="checkbox" name="remove'.$row[0].'" value="1_'.$row[0].'">
+                                        <input class="checkbox-remove" type="checkbox" name="remove'.$row[0].'" value="1_'.$row[0].'">
                                     </td>';
                             echo '</tr>';
                         }
@@ -82,7 +103,7 @@
                         </form>';
                 }
 
-                ?>
+              ?>
 
             </div>
 
@@ -116,7 +137,7 @@
                     </div>
 
                     <div class="signup-input--submit">
-                        <input type="submit" value="Sign up">
+                        <input type="submit" value="Add user">
                     </div>
 
                 </form>

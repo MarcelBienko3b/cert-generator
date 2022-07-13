@@ -4,6 +4,8 @@
     padding: 0;
     box-sizing: border-box;
 
+    font-family: 'Courier New', Courier, monospace;
+
 }
 
 body {
@@ -81,6 +83,20 @@ body {
 .generator-variables-container input {
 
     margin-bottom: .8em;
+    width: 40%;
+
+}
+
+.generator-variables-container input[type='submit'],
+.generator-variables-container input[type='color'] {
+
+   width: 20%;
+
+}
+
+.generator-variables-container label {
+
+   text-align: center;
 
 }
 
