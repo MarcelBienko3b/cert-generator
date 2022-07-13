@@ -148,9 +148,23 @@ body {
 
 }
 
+.signup-container label {
+
+    text-align: center;
+ 
+ }
+
 .signup-container input {
 
     margin-bottom: .8em;
+    width: 40%;
+
+}
+
+.signup-container input[type='submit'],
+.signup-container input[type='color'] {
+
+   width: 20%;
 
 }
 
